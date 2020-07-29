@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbldepartamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+          <Property Name="descricao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblfuncionarios">
+          <Key>
+            <PropertyRef Name="Id_func" />
+          </Key>
+          <Property Name="Id_func" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+          <Property Name="sobrenome" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="rg" Type="varchar" MaxLength="50" />
+          <Property Name="cpf" Type="varchar" MaxLength="50" />
+          <Property Name="endereco" Type="varchar" MaxLength="50" />
+          <Property Name="bairro" Type="varchar" MaxLength="50" />
+          <Property Name="cidade" Type="varchar" MaxLength="50" />
+          <Property Name="uf" Type="varchar" MaxLength="2" />
+          <Property Name="departamento" Type="int" />
+        </EntityType>
+        <EntityContainer Name="masterModelStoreContainer">
+          <EntitySet Name="tbldepartamento" EntityType="Self.tbldepartamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblfuncionarios" EntityType="Self.tblfuncionarios" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbldepartamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblfuncionarios">
+          <Key>
+            <PropertyRef Name="Id_func" />
+          </Key>
+          <Property Name="Id_func" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sobrenome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cpf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cidade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="uf" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="departamento" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="MeuBanco" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbldepartamento" EntityType="Self.tbldepartamento" />
+          <EntitySet Name="tblfuncionarios" EntityType="Self.tblfuncionarios" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="MeuBanco">
+          <EntitySetMapping Name="tbldepartamento">
+            <EntityTypeMapping TypeName="masterModel.tbldepartamento">
+              <MappingFragment StoreEntitySet="tbldepartamento">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblfuncionarios">
+            <EntityTypeMapping TypeName="masterModel.tblfuncionarios">
+              <MappingFragment StoreEntitySet="tblfuncionarios">
+                <ScalarProperty Name="Id_func" ColumnName="Id_func" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="sobrenome" ColumnName="sobrenome" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="rg" ColumnName="rg" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="uf" ColumnName="uf" />
+                <ScalarProperty Name="departamento" ColumnName="departamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
