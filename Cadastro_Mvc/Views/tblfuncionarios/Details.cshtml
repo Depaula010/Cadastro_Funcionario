@@ -1,0 +1,112 @@
+﻿@model Cadastro_Mvc.tblfuncionarios
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="wrapper">
+    <div class="row">
+        <div class="col-md-12 mt">
+            <div class="content-panel" style="padding:20px">
+                <h2>Detalhes</h2>
+
+                <div>
+                    <h4>tblfuncionarios</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.nome)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.nome)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.sobrenome)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.sobrenome)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.email)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.email)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.rg)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.rg)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.cpf)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.cpf)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.endereco)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.endereco)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.bairro)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.bairro)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.cidade)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.cidade)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.uf)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.uf)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.departamento)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.departamento)
+                        </dd>
+
+                    </dl>
+                </div>
+                <p>
+                    @Html.ActionLink("Editar", "Edit", null, new { id = Model.Id_func }, new { @class = "btn btn-primary" }) 
+                    @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
